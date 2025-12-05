@@ -2,32 +2,31 @@
  <html lang="en">
  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" container="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
  </head>
- <body class="partview">
+ <body class="splitview">
 
     <header class="viewme">
       
          
-         <section class="aboutme">
+         <section class="photo">
             <img src="/img/gilga.jpeg" alt="foto">
+             <p> Yonathan Alexis Perez Ruiz</p>
          </section>
          
          <section class="info">
-            <span> Portafolio</span>
-            <span> Yonathan Alexis Perez Ruiz</span>
-            <span> 
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptatum excepturi temporibus nesciunt libero ipsam 
-               harum quibusdam. Odio, distinctio voluptates atque officiis quod tenetur eum, natus consectetur eius quos explicabo.
-            </span>
-           
-             <span> 
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptatum excepturi temporibus nesciunt libero ipsam 
-               harum quibusdam. Odio, distinctio voluptates atque officiis quod tenetur eum, natus consectetur eius quos explicabo.
-            </span>
-            <span> Contactos :</span>
+
+            <p> Enlaces de interes</p>
+            <nav>
+               <ul>
+                  <li><a href="/index.html">Inicio</a></li>
+                  <li><a href="/pets.html">Mascotas</a></li>
+             </ul>
+
+            </nav>
+            <p> Redes </p>
             <a href="https://github.com/Alexis-pr/Portafolio" target="_blank"> <img src="/img/git.png" alt="https://github.com/Alexis-pr/Portafolio"></a>
 
          </section>
@@ -35,27 +34,53 @@
 
     </header>
     <main>
-      <section class="content">
+      <section  class="title">
          
          <h1>MI PORTAFOLIO</h1>
          <article>
-            <span>
+            <p>
                Especificación del portafolio
-            </span>
+            </p>
          </article>
+         
       </section>
-      <section class="cards">
-         <section class="card">
-            <img src="" alt="">
-            <h3>Tarta de Chocolate</h3>
-            <p>Bizcocho húmedo con relleno de ganache y cobertura de cacao oscuro.</p>
-         </section>
-          <section class="card">
-            <img src="" alt="">
-            <h3>Tarta de Chocolate</h3>
-            <p>Bizcocho húmedo con relleno de ganache y cobertura de cacao oscuro.</p>
-            <p> Para ver el código</p>
-         </section>
+        <section class="aboutme ">
+            <h2>Sobre MI</h2>
+            <p>Es una persona que se encuentra en las primeras etapas de su camino como desarrollador, 
+               con un entendimiento sólido de los fundamentos y una mentalidad orientada al aprendizaje 
+               constante. Posee conocimientos básicos en lenguajes y tecnologías esenciales, así como la 
+               capacidad de aplicar conceptos fundamentales en pequeños proyectos o ejercicios prácticos.
+               Se caracteriza por su curiosidad,dedicación y disposición para mejorar sus habilidades a través de la práctica, la investigación
+               y el autoaprendizaje.
+            </p>
+      </section>
+      <div class="container">
+          <section class="listproject ">
+            <h2>Proyectos</h2>
+            <ol>
+               <li> Ciudad Del conocimiento  ->   <a href="">Ver Más</a></li>
+               
+            </ol>
+      </section>
+      </div>
+     
+      <section>
+         <form action="" >
+            <fieldset>
+               <label for="name">Nombre</label>
+               <input type="text"  placeholder="Escribe tu nombre"  required>
+               <label for="tel">Telefono</label>
+               <input type="number" name="tel" id="" placeholder="escrebe tu telefono" required>
+               <label for="Mensaje">Mensaje</label>
+               <textarea name="mensaje" id="mensaje" placeholder="Escribe.."  required></textarea>
+               <button type="submit">Enviar</button>
+            </fieldset>
+            
+         </form>
+      </section>
+
+    
+     
         
       
 
