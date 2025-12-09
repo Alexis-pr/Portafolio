@@ -122,6 +122,8 @@ main .splitview-home {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -242,9 +244,7 @@ form button:hover {
     background-color: #f0d64f;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS*/
 .container {
    display: flex;
    flex-direction: column;
@@ -253,9 +253,7 @@ form button:hover {
 }
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    
-    width: 900px;
+    grid-template-columns: repeat(3, 1fr);  
     height: 650px;
     gap: 3rem;
     padding: 2rem;
