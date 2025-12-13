@@ -1,128 +1,269 @@
-*{
+/*  RESET Y VARIABLES */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-   --color1-subs2 :  #aab69b ;
-    --color-subs : #9e906e ;
-    --color-title : #9684a3 ;
-    --color-borders : #8870ff ;
-    --color-body : #000000 ;
-    --letter : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --color-title: #9684a3;
+    --color-borders: #8870ff;
+    --color-body-left: #333030;
+    --color-body-right: #4d4c4c;
+    --color-nav: #EDD45C;
+    --color-bg: #2b2b2b;   /* color base de todo el documento */
+    --letter: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --title-letter: 2rem;
+    --size-letter: 1.2rem;
 }
 
-
-
-body{
-    margin: 0;
-    padding: 0;
+/*  BODY Y HTML*/
+html, body {
+    height: 100%;
+    background-color: var(--color-bg);
     font-family: var(--letter);
-
 }
-.partview{
+
+/*  SPLIT VIEW */
+.splitview {
     display: flex;
+    height: 100vh;
     width: 100%;
-
 }
 
-.partview header{
-    width: 25%;    
-    background-color: var(--color-title);
-
-}
-
-.partview main{
-    width: 80%;
-    background-color: var(--color-borders);
-}
-
-.viewme{
+/*  HEADER IZQUIERDO */
+.splitview header {
+    width: 25%;
+    height: 100%;
+    background-color: var(--color-body-left);
+    box-shadow: 5px 0 20px rgba(0,0,0,0.6);
     display: flex;
     flex-direction: column;
-   /*  flex-wrap: wrap; */
-    align-items: center;
-    justify-content: center;
-   
-   
 }
 
-.aboutme{
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    height: 800px;
+/* VIEWME: DIVIDIDO EN PHOTO E INFO= */
+.viewme .photo,
+.viewme .info {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
+    gap: 30px;
+    padding: 20px;
+    color: white;
 }
-.aboutme img{
-    width: 300px;
-    height: 300px;
-    border-radius: 50% 50%;
+
+/* FOTO */
+.photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #000000 ;
-    box-shadow: 10px 10px 100px 10px rgba(250, 3, 3, 0.2)
+    border: 4px solid #000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-
-.info{
-    background-color: var(--color1-subs2);
-    width: 100%;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
+.photo p {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.info span{
-    font-family: var(--letter);
-    width: 400px;
-}
-.info a img{
-    width: 50px;
-    transition: transform 1s, box-shadow 1s;
-
-}
-.info a img :hover{
-    box-shadow: 40px 40px #ccc;
-    transform: scale(1.3);
+/* INFO */
+.info p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-main {
-    margin: 0;
+.info nav ul {
+    list-style: none;
     padding: 0;
-
-
 }
-.content{
-   
-    background-color: rgb(48, 197, 197);
-    height: 300px;
+
+.info nav a {
+    text-decoration: none;
+    color: var(--color-nav);
+    font-size: 1.2rem;
+    margin: 5px 0;
+    display: inline-block;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.info nav a:hover {
+    transform: scale(1.1);
+    color: var(--color-accent);
+}
+
+.info a img {
+    width: 50px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.info a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--color-nav);
+}
+
+/* MAIN DERECHO */
+/* MAIN general (para segunda página y container) */
+main {
+    width: 75%;
+    height: 100%;
+    background-color: var(--color-bg);
+    overflow-y: auto;
+    padding: 40px;
+    color: #f0f0f0;
+    display: block; /* block para que grid funcione */
+}
+
+/* MAIN con clase específica para splitview home */
+main .splitview-home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; 
 }
 
-.cards{
+
+
+/* SECCIONES DENTRO DE MAIN */
+.title {
+    background-color: rgba(48,197,197,0.2);
+    width: 100%;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.aboutme {
+    padding: 40px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: var(--size-letter);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aboutme h2 {
+    margin-bottom: 20px;
+    font-size: var(--title-letter);
+}
+
+.listproject{
+    border:  2px solid #ccc;
+    padding: 30px;
+    border-radius: 20px;
+    width: 900px;
+    text-align: center; 
+    /* line-height: 30px; */
+}
+
+.listproject h2 {
+    margin-bottom: 30px;
+    font-size: var(--size-letter);
+}
+
+.listproject ol li a{
+    text-decoration: none;
+    color: #ccc;
+    display: inline-block;
+    transition: transform 0.3s, color 0.3s,box-shadow 0.5s;
+}   
+
+.listproject ol li a:hover{
+    transform:scale(1.1) ;
+    color:#249599 ;
+}
+/* FORMULARIO */
+form {
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+}
+
+form fieldset {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #2b2b2b;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-top: 15px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #fff;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 5px var(--color-accent);
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-nav);
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #f0d64f;
+}
+
+/* =========================
+   CARDS
+========================= */
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    
+    
+    height: 650px;
+    gap: 3rem;      
     padding: 2rem;
-    margin: 2rem;
+    margin: 2rem;   
 }
 
-.cards:hover{
-    transform: scale(1);
-}
-
-
-.card{
-     background-color: rgba(255, 255, 255, 0.05);
+.card {
+    background-color: rgba(255,255,255,0.05);
     border-radius: 15px;
     padding: 1rem;
     text-align: center;
@@ -136,18 +277,163 @@ main {
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 .card h3 {
-margin: 1rem 0 0.5rem;
+    margin: var(--title-letter)
 }
 
 .card p {
-font-size: 0.95rem;
-color: #ccc;
+    font-size: var(--size-letter);
+    color: #ccc;
+    text-align: justify;
+    padding: 3px;
 }
 
+/* ===============================
+   MOBILE (navbar + layout vertical)
+=============================== */
+@media (max-width: 768px) {
 
+    /* El splitview deja de ser horizontal */
+    .splitview {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* HEADER deja de ser sidebar */
+    .splitview header {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+   /* ===============================
+   MOBILE (navbar + layout vertical + imágenes fluidas + cards responsivas)
+================================ */
+@media (max-width: 400px) {
+
+    /* LAYOUT GENERAL */
+    .splitview {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .splitview header {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    /* ========== NAVBAR SUPERIOR ========== */
+    .viewme {
+        position: sticky; /* Cambia a fixed si lo quieres siempre fijo */
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: var(--color-body-left);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 15px;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .viewme .photo,
+    .viewme .info {
+        flex: none;
+        padding: 0;
+        margin: 0;
+        gap: 5px;
+    }
+
+    /* FOTO ADAPTATIVA PARA NAVBAR */
+    .viewme .photo img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-width: 2px;
+    }
+
+    /* Nombre no se muestra en navbar (opcional) */
+    .viewme .photo p {
+        display: none;
+    }
+
+    /* Links del nav compactos */
+    .viewme .info nav a {
+        font-size: 0.9rem;
+        margin: 0 6px;
+        white-space: nowrap;
+    }
+
+    /* Evitar que el contenido quede debajo de navbar */
+    body {
+        padding-top: 90px;
+    }
+
+
+    /* ========== MAIN ========== */
+    main {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* TITULOS */
+    .title,
+    .aboutme,
+    .listproject {
+        width: 100% !important;
+        padding: 20px;
+    }
+
+
+    /* ========== IMÁGENES ADAPTATIVAS EN GENERAL ========== */
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+    /* ========== CARDS RESPONSIVAS ========== */
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr; /* UNA COLUMNA EN MÓVIL */
+        gap: 1.5rem;
+        padding: 1rem;
+        height: auto;  /* Elimina la altura fija */
+        margin: 1rem 0;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;  /* Antes estaba fijo en 400px */
+        max-height: 350px; /* Límite moderado */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+        margin: 15px 0;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}
