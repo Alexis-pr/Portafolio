@@ -255,9 +255,9 @@ form button:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     
-    width: 900px;
+    
     height: 650px;
-    gap: 3rem;
+    gap: 3rem;      
     padding: 2rem;
     margin: 2rem;   
 }
@@ -291,4 +291,149 @@ form button:hover {
     color: #ccc;
     text-align: justify;
     padding: 3px;
+}
+
+/* ===============================
+   MOBILE (navbar + layout vertical)
+=============================== */
+@media (max-width: 768px) {
+
+    /* El splitview deja de ser horizontal */
+    .splitview {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* HEADER deja de ser sidebar */
+    .splitview header {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+   /* ===============================
+   MOBILE (navbar + layout vertical + imágenes fluidas + cards responsivas)
+================================ */
+@media (max-width: 400px) {
+
+    /* LAYOUT GENERAL */
+    .splitview {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .splitview header {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    /* ========== NAVBAR SUPERIOR ========== */
+    .viewme {
+        position: sticky; /* Cambia a fixed si lo quieres siempre fijo */
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: var(--color-body-left);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 15px;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .viewme .photo,
+    .viewme .info {
+        flex: none;
+        padding: 0;
+        margin: 0;
+        gap: 5px;
+    }
+
+    /* FOTO ADAPTATIVA PARA NAVBAR */
+    .viewme .photo img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-width: 2px;
+    }
+
+    /* Nombre no se muestra en navbar (opcional) */
+    .viewme .photo p {
+        display: none;
+    }
+
+    /* Links del nav compactos */
+    .viewme .info nav a {
+        font-size: 0.9rem;
+        margin: 0 6px;
+        white-space: nowrap;
+    }
+
+    /* Evitar que el contenido quede debajo de navbar */
+    body {
+        padding-top: 90px;
+    }
+
+
+    /* ========== MAIN ========== */
+    main {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* TITULOS */
+    .title,
+    .aboutme,
+    .listproject {
+        width: 100% !important;
+        padding: 20px;
+    }
+
+
+    /* ========== IMÁGENES ADAPTATIVAS EN GENERAL ========== */
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+    /* ========== CARDS RESPONSIVAS ========== */
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr; /* UNA COLUMNA EN MÓVIL */
+        gap: 1.5rem;
+        padding: 1rem;
+        height: auto;  /* Elimina la altura fija */
+        margin: 1rem 0;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;  /* Antes estaba fijo en 400px */
+        max-height: 350px; /* Límite moderado */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+        margin: 15px 0;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
 }
