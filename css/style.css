@@ -162,12 +162,17 @@ main .splitview-home {
     margin-bottom: 30px;
     font-size: var(--size-letter);
 }
+.listproject ol {
+  list-style-position: inside;
+ padding: 0;
+}
 
 .listproject ol li a{
     text-decoration: none;
     color: #ccc;
     display: inline-block;
     transition: transform 0.3s, color 0.3s,box-shadow 0.5s;
+
 }   
 
 .listproject ol li a:hover{
@@ -293,6 +298,85 @@ form button:hover {
     padding: 3px;
 }
 
+/* =========================
+   MODELS
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #111;
+  border-radius: 20px;
+  max-width: 750px;
+  width: 90%;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  animation: modalIn 0.35s ease;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Imagen COMPLETA */
+.modal-content img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain; /* CLAVE */
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  background: #000;
+}
+
+/* Título */
+.modal-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Texto */
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  text-align: justify;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+/* Animación */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 /* ===============================
    MOBILE (navbar + layout vertical)
 =============================== */
@@ -393,6 +477,7 @@ form button:hover {
     .listproject {
         width: 100% !important;
         padding: 20px;
+
     }
 
 
@@ -436,4 +521,5 @@ form button:hover {
     .card p {
         font-size: 1rem;
     }
+}
 }
