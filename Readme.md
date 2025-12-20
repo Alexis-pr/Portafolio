@@ -2,6 +2,7 @@
 # Indice
 * [Titulo](#history-users-2)
 * [Tecnologies](#tecnologies)
+*  [updates](#updates)
 * [Run](#run)
 * [Author](#author)
 * [Repository](#repository)
