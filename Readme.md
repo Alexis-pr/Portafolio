@@ -13,6 +13,10 @@ This portfolio contains two web views, the first of which provides a brief descr
 ## Tecnologies
 * Html
 * Css 
+* JavaScript
+
+## Updates
+Use JS updates to open the images and create a modal, and also display an alert when form information is submitted.
 
 ## Run
 
